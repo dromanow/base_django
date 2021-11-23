@@ -1,1 +1,1 @@
-from .somemodel import SomeModel
+from .somemodel import SomeModel, SomeOtherModel

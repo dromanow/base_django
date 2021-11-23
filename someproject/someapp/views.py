@@ -8,7 +8,10 @@ from .models import SomeModel
 class SomeModelView(ListView):
     model = SomeModel
     template_name = 'index.html'
-    queryset = SomeModel.objects.all()
+    queryset = SomeModel.objects.select_related('other').prefetch_related('other1').all()
+    # extra_context = {
+    #     'user': {'name': 'Denis', 'age': 41}
+    # }
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
