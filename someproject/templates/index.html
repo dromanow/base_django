@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-{{ user.name }} {{ user.age }}
+{{ user.name }} {{ user.age }} {{site.name}}
 <table>
     <tr>
         <th>
@@ -20,6 +20,9 @@
         <th>
             other1
         </th>
+        <th>
+            site
+        </th>
     </tr>
 {% for object in object_list %}
     <tr>
@@ -28,6 +31,8 @@
         <td>{{ object.other.value }}</td>
         <td>
         {% for o in object.other1.all %} {{o.value}} {% endfor %}
+        </td>
+        <td> {{object.site.name}}
         </td>
     </tr>
 {% endfor %}
